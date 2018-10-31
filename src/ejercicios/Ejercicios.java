@@ -10,11 +10,11 @@ import java.util.Random;
  */
 public class Ejercicios {
 	public float calcularSaldoFinal(float saldoInicial, float[] movimientos) {
-		int saldofin = 0;
+		float saldofin = saldoInicial;
 		for (int i = 0; i < movimientos.length; i++) {
 			saldofin += movimientos[i]; 
 		}
-		return saldoInicial + saldofin;
+		return saldofin;
 	}
 
 	public int ejercicio2(int n, int inferior, int superior) {
@@ -22,7 +22,7 @@ public class Ejercicios {
 		int acumulador = 0;
 		Random rnd = new Random();
 		for (int i = 0; i < n; i++) {
-			numero = inferior + rnd.nextInt(superior);
+			numero = inferior + rnd.nextInt(superior);    // acumulador += inferior + rnd.nextInt(superior);  Otra manera que nos ahorra una variable y una linea
 			acumulador += numero;
 		}
 		return acumulador / n;
